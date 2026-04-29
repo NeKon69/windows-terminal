@@ -49,8 +49,13 @@ return {
   keys = {
     {
       key = 'c',
-      mods = 'CTRL',
+      mods = 'CTRL|SHIFT',
       action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
+    },
+    {
+      key = 'v',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.PasteFrom 'Clipboard',
     },
     {
       key = '+',
@@ -76,6 +81,11 @@ return {
       key = 'PageDown',
       mods = 'NONE',
       action = wezterm.action.ScrollByPage(1),
+    },
+    {
+      key = '\\',
+      mods = 'CTRL',
+      action = wezterm.action.SendKey { key = '\\', mods = 'CTRL' },
     },
   },
 }
